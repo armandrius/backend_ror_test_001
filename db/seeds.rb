@@ -172,4 +172,8 @@ purchases = users.first.purchases.create!([
   { purchase_option: movies.first.purchase_options.second }
 ])
 
+purchases.each do |purchase|
+  purchase.update_columns expires_at: (1 + rand).days.from_now
+end
+
 purchases.last.update_columns(created_at: 3.days.ago, expires_at: 1.day.ago)
