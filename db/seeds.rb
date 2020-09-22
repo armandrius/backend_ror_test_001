@@ -176,4 +176,10 @@ purchases.each do |purchase|
   purchase.update_columns expires_at: (1 + rand).days.from_now
 end
 
+[Season, Movie].each do |klass|
+  klass.all.each do |content|
+    content.update_columns created_at: content.created_at + rand * 3600
+  end
+end
+
 purchases.last.update_columns(created_at: 3.days.ago, expires_at: 1.day.ago)
