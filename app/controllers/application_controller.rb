@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::API
+  include ActionController::Caching
   unless Rails.env.development?
     rescue_from Exception, with: :exception_handler
   end

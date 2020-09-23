@@ -1,1 +1,3 @@
-json.contents @contents, partial: 'contents/show', as: :content
+json.cache! @contents do
+  json.contents @contents, partial: 'contents/show', as: :content
+end
