@@ -1,3 +1,1 @@
-json.movies @movies do |movie|
-  json.partial! 'contents/show', content: movie
-end
+json.movies @movies, partial: 'contents/show', as: :content

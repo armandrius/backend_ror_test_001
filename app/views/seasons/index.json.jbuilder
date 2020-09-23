@@ -1,1 +1,1 @@
-json.seasons @seasons, partial: 'seasons/show', as: :season
+json.seasons @seasons, partial: 'contents/show', as: :content
