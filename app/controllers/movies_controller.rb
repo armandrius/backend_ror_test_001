@@ -1,5 +1,5 @@
 class MoviesController < ContentsController
   def index
-    @movies = Movie.order(:created_at)
+    @movies = Movie.all_cached
   end
 end
