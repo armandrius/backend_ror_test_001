@@ -8,7 +8,7 @@ class Purchase < ApplicationRecord
   validate :no_duplicates
 
   def remaining_time_seconds
-    [expires_at - created_at, 0].max.to_i
+    [expires_at - Time.now, 0].max.to_i
   end
 
   def content

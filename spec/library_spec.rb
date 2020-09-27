@@ -21,7 +21,7 @@ RSpec.describe LibraryController, type: :controller do
   it "renders only contents that haven't expired" do
     @user = User.last
     purchase1 = @user.purchases.create! purchase_option: Movie.first.purchase_options.first
-    purchase1.update_columns expires_at: 1.day.ago # mock expired purchase
+    purchase1.update_columns created_at: 3.days.ago, expires_at: 1.day.ago # mock expired purchase
 
     purchase2 = @user.purchases.create! purchase_option: Season.last.purchase_options.first
 
